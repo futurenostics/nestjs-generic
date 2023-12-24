@@ -29,7 +29,7 @@ RUN npm ci --include=dev
 COPY --link . .
 
 # Generate prisma schema
-RUN npm run prisma:generate
+# RUN npm run prisma:generate
 
 
 # Build application
@@ -47,4 +47,4 @@ COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "npm", "run", "start:migrate:prod" ]
+CMD [ "npm", "run", "start:prod" ]
